@@ -8,17 +8,18 @@ formEL.addEventListener("submit", (event) => {
     const inputValue = input.value;
 
     createTodo(inputValue);
+    input.value = ""
 })
 
 function createTodo(todo){
   const containerEL = document.createElement("div")
-  const inputEL = document.createElement("button")
+  const inputEL = document.createElement("input")
   const pragraphEL = document.createElement("p")
   const buttonEL = document.createElement("button")
 
   
 //input
-inputEL.type = "chechbox"
+inputEL.type = "checkbox"
 inputEL.classList.add("check")
 
 //pragraph
@@ -39,6 +40,7 @@ todos.appendChild(containerEL)
 inputEL.addEventListener("click", () =>{
     
 containerEL.classList.toggle("complete")
+
 });
 
 buttonEL.addEventListener("click", () => {
